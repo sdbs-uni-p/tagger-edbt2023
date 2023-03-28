@@ -1,0 +1,32 @@
+{
+    "json": {
+        "name": "MapGermany",
+        "out_dir": "/tmp/Tagger",
+        "schema_out": "schema.json",
+        "ite_schema_out": "schema-ite.json",
+        "results_out": "results.txt",
+        "input": [
+            "/home/stefan/EDBT/code/Josch/tools/temp/0.json"
+        ],
+        "config": [
+            {
+                "name": "threshold-15",
+                "min_sample": 0.15,
+                "max_combs": [
+                    1,
+                    1
+                ],
+                "max_gen": 2,
+                "max_spec": 6,
+                "only_primitive_if": true,
+                "filter_candidate_list": true,
+                "ignore_constant_attributes": true,
+                "filter_plis": false,
+                "keep_specific_versions": false,
+                "individual_noise_threshold": 0.0,
+                "total_noise_threshold": 0.0,
+                "disable_heuristics": false
+            }
+        ]
+    }
+}

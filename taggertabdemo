@@ -1,0 +1,202 @@
+<!-- Tab for Tagger here TODO fill with content and add in CollectionViewController.java -->
+        <Tab text="Tagger" fx:id="tabTagger">
+            <AnchorPane styleClass="in-tab">
+                <!- View tab layout
+                <GridPane hgap="5" vgap="3"
+                          AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0"
+                          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+
+                    <!- 3 + 1 + 5 columns -->
+                    <columnConstraints>
+                        <!-- document side 45% -->
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10" percentWidth="15.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10" percentWidth="15.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10" percentWidth="15.0"/>
+
+                        <!-- middle -->
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10" percentWidth="10.0"/>
+
+                        <!-- validator side 45% -->
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10" percentWidth="9.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10" percentWidth="9.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10" percentWidth="9.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10" percentWidth="9.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10" percentWidth="9.0"/>
+                    </columnConstraints>
+
+                    <!-- 4 rows -->
+                    <rowConstraints>
+                        <!-- inner caption -->
+                        <RowConstraints vgrow="SOMETIMES" minHeight="10" percentHeight="5.0"/>
+
+                        <!-- generate row -->
+                        <RowConstraints vgrow="SOMETIMES" minHeight="10" percentHeight="5.0"/>
+
+                        <!-- text area -->
+                        <RowConstraints vgrow="SOMETIMES" minHeight="10" percentHeight="85.0"/>
+
+                        <!-- save row -->
+                        <RowConstraints vgrow="SOMETIMES" minHeight="10" percentHeight="5.0"/>
+                    </rowConstraints>
+                    <!-- end view layout -->
+
+                    <!-- Document side -->
+                    <!-- row 0: Inner Caption -->
+                    <Text text="Document" styleClass="cpt"/>
+                    <!-- end inner caption -->
+
+                    <!-- row 1: show -->
+                    <Button fx:id="btnShowAll" text="Show all" onAction="#showAll"
+                            GridPane.rowIndex="1" GridPane.columnIndex="1"
+                            GridPane.halignment="CENTER"/>
+
+                    <Button fx:id="btnGetSampleDocument" text="Show random" onAction="#getSample"
+                            GridPane.rowIndex="1"
+                            GridPane.halignment="LEFT"/>
+                    <!-- end show -->
+
+                    <!-- row 2: input -->
+                    <CodeArea fx:id="caDocument"
+                              GridPane.columnSpan="3" GridPane.rowIndex="2"/>
+                    <!-- end input -->
+
+                    <!-- row 3: save -->
+                    <Button fx:id="btnInsertDocument" text="Insert" onAction="#insertDocument"
+                            GridPane.columnIndex="2" GridPane.rowIndex="3"
+                            GridPane.halignment="RIGHT"/>
+                    <!-- end save -->
+                    <!-- end Document side -->
+
+                    <!-- Validator side -->
+                    <!-- row 0: inner caption -->
+                    <Text fx:id="cptValidator" text="Schema extractor" styleClass="cpt"
+                          GridPane.columnIndex="4"/>
+
+                    <Button fx:id="btnValidateAll" text="Validate all"
+                            onAction="#validateAll"
+                            GridPane.columnIndex="2"
+                            GridPane.halignment="RIGHT" />
+
+                    <!-- TODO method here to select correctly -->
+                    <ComboBox fx:id="extractorSelection" styleClass="cb-caption" prefWidth="Infinity"
+                              onAction="#"
+                              GridPane.columnSpan="3" GridPane.hgrow="NEVER">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Klettke et al."/>
+                                <String fx:value="Spoth et al."/>
+                                <String fx:value="Frozza et al."/>
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                    <!-- end inner caption -->
+
+                    <!-- row 1: generate -->
+                    <GridPane GridPane.columnIndex="4" GridPane.columnSpan="5"
+                              GridPane.rowIndex="1">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10" percentWidth="15.0"/>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10" percentWidth="20.0"/>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10" percentWidth="10.0"/>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10" percentWidth="20.0"/>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10" percentWidth="15.0"/>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10" percentWidth="20.0"/>
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints vgrow="SOMETIMES" minHeight="10" percentHeight="100.0" />
+                        </rowConstraints>
+                        <!-- sampling method -->
+                        <Label text="Sample as" />
+
+                        <ComboBox fx:id="slcValMethod" promptText="Method" GridPane.columnIndex="1">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="absolute"/>
+                                    <String fx:value="relative"/>
+                                </FXCollections>
+                            </items>
+                            <value>
+                                <String fx:value="absolute"/>
+                            </value>
+                        </ComboBox>
+
+                        <!-- end method -->
+
+                        <!-- sampling size -->
+                        <Label text="over" GridPane.columnIndex="2" GridPane.halignment="CENTER"/>
+
+                        <IntegerTextField fx:id="inpValSize" prefWidth="Infinity"
+                                          GridPane.columnIndex="3" />
+                        <!-- end sampling size -->
+
+                        <!-- unit -->
+                        <Label fx:id="txtUnit" text="documents." GridPane.columnIndex="4" />
+
+                        <Button fx:id="btnGenerateValidator" text="Generate"
+                                onAction="#generateValidator" disable="true"
+                                GridPane.columnIndex="5" GridPane.halignment="RIGHT"/>
+
+                    </GridPane>
+                    <!-- end generate -->
+
+                    <!-- row 2: input -->
+                    <CodeArea fx:id="caValidator"
+                              GridPane.columnIndex="4" GridPane.columnSpan="5"
+                              GridPane.rowIndex="2"/>
+                    <!-- end input -->
+
+
+                    <!-- row 3: save -->
+                    <!-- validation level -->
+                    <Label text="Validation level"
+                           GridPane.columnIndex="4" GridPane.rowIndex="3"/>
+
+                    <ComboBox fx:id="slcLevel" prefWidth="Infinity"
+                              GridPane.columnIndex="5" GridPane.rowIndex="3">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="strict"/>
+                                <String fx:value="moderate"/>
+                                <String fx:value="off"/>
+                            </FXCollections>
+                        </items>
+                        <value>
+                            <String fx:value="strict"/>
+                        </value>
+                    </ComboBox>
+                    <!-- end validation level -->
+
+                    <!-- validation action -->
+                    <Label text="Validation action"
+                           GridPane.columnIndex="6" GridPane.rowIndex="3"/>
+                    <ComboBox fx:id="slcAction" prefWidth="Infinity"
+                              GridPane.columnIndex="7"
+                              GridPane.rowIndex="3">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="error"/>
+                                <String fx:value="warn"/>
+                            </FXCollections>
+                        </items>
+                        <value>
+                            <String fx:value="error"/>
+                        </value>
+                    </ComboBox>
+                    <!-- end validation action -->
+
+                    <Button fx:id="btnSaveValidator" text="Save" onAction="#saveValidator"
+                            GridPane.columnIndex="8" GridPane.rowIndex="3"/>
+                    <!-- end save -->
+                    <!-- end Validator side -->
+
+                    <!-- center: validate -->
+                    <Button fx:id="btnValidateDocument" text="Validate this"
+                            onAction="#validateDocument"
+                            GridPane.columnIndex="2" GridPane.rowIndex="1"
+                            GridPane.halignment="RIGHT" />
+                    <!-- end validate -->
+
+                </GridPane>
+                <!-- end view layout -->
+            </AnchorPane>
+        </Tab> -->

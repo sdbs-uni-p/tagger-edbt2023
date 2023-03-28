@@ -1,0 +1,68 @@
+{
+  "wija_germany": {
+    "name": "MapGermany",
+    "out_dir": "/Users/vgi/Documents/Articles",
+    "schema_out": "schema.json",
+    "ite_schema_out": "schema-ite.json",
+    "results_out": "results.txt",
+    "input": [
+      "/Users/vgi/Downloads/Tagger-main/input.json"
+    ],
+    "config": [
+      {
+        "name": "threshold-15",
+        "min_sample": 0.15,
+        "max_combs": [
+          1,
+          1
+        ],
+        "max_gen": 2,
+        "max_spec": 6,
+        "only_primitive_if": true,
+        "filter_candidate_list": true,
+        "ignore_constant_attributes": true,
+        "filter_plis": false,
+        "keep_specific_versions": false,
+        "individual_noise_threshold": 0.0,
+        "total_noise_threshold": 0.0,
+        "disable_heuristics": false
+      },
+      {
+        "name": "threshold-35",
+        "min_sample": 0.35,
+        "max_combs": [
+          1,
+          1
+        ],
+        "max_gen": 2,
+        "max_spec": 6,
+        "only_primitive_if": true,
+        "filter_candidate_list": true,
+        "ignore_constant_attributes": true,
+        "filter_plis": false,
+        "keep_specific_versions": false,
+        "individual_noise_threshold": 0.0,
+        "total_noise_threshold": 0.0,
+        "disable_heuristics": false
+      },
+      {
+        "name": "threshold-50",
+        "min_sample": 0.5,
+        "max_combs": [
+          1,
+          1
+        ],
+        "max_gen": 2,
+        "max_spec": 6,
+        "only_primitive_if": true,
+        "filter_candidate_list": true,
+        "ignore_constant_attributes": true,
+        "filter_plis": false,
+        "keep_specific_versions": false,
+        "individual_noise_threshold": 0.0,
+        "total_noise_threshold": 0.0,
+        "disable_heuristics": false
+      }
+    ]
+  }
+}
