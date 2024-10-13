@@ -1,6 +1,6 @@
 # Tagger
 
-Tagger extends Josch by integrating Tagged Unions as well as more schema extraction approaches.
+Tagger extends Josch (see [Josch](#Josch) below) by integrating Tagged Unions as well as more schema extraction approaches.
 To use Tagger in Josch, please follow the steps above first and then the following below.
 
 ## Config
@@ -25,9 +25,41 @@ In Josch, please provide a valid path and make sure that it ends with `approache
 Afterwards you can connect to the database as above and utilise Tagged Union Extraction by 
 navigating to the `Tagger`-pane.
 
-Implemented by Valentin Gittinger.
+Implemented by Valentin Gittinger and Stefan Klessinger.
 
-# Josch
+## Citing this work
+This work was published as a demo at EDBT 2023. To cite this work, please use the following BibTeX entry
+```
+@inproceedings{DBLP:conf/edbt/KlessingerFGKSS23,
+  author       = {Stefan Klessinger and
+                  Michael Fruth and
+                  Valentin Gittinger and
+                  Meike Klettke and
+                  Uta St{\"{o}}rl and
+                  Stefanie Scherzinger},
+  editor       = {Julia Stoyanovich and
+                  Jens Teubner and
+                  Nikos Mamoulis and
+                  Evaggelia Pitoura and
+                  Jan M{\"{u}}hlig and
+                  Katja Hose and
+                  Sourav S. Bhowmick and
+                  Matteo Lissandrini},
+  title        = {Tagger: {A} Tool for the Discovery of Tagged Unions in {JSON} Schema
+                  Extraction},
+  booktitle    = {Proceedings 26th International Conference on Extending Database Technology,
+                  {EDBT} 2023, Ioannina, Greece, March 28-31, 2023},
+  pages        = {827--830},
+  publisher    = {OpenProceedings.org},
+  year         = {2023},
+  url          = {https://doi.org/10.48786/edbt.2023.75},
+  doi          = {10.48786/EDBT.2023.75},
+  timestamp    = {Sat, 29 Apr 2023 13:06:22 +0200},
+  biburl       = {https://dblp.org/rec/conf/edbt/KlessingerFGKSS23.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+```
+## Josch
 Josch is a cockpit application that combines schema extraction and checking for JSON Schema 
 containment to exploit their interactions. It can be used for schema-less NoSQL document stores,
  but is currently geared for MongoDB. Furthermore, it does not implement schema extraction and 
